@@ -3,16 +3,18 @@ import { TodosService } from '../services/todos';
 import { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs';
 import { TodoItem } from '../components/todo-item/todo-item';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-todos',
-  imports: [TodoItem],
+  imports: [TodoItem, FormsModule],
   templateUrl: './todos.html',
   styleUrl: './todos.scss',
 })
 export class Todos implements OnInit {
   todoService = inject(TodosService)
   todoItems = signal<Array<Todo>>([]);
+  searchItem = signal('');
 
   ngOnInit(): void {
     this.todoService

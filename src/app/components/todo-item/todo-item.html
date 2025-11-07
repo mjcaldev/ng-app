@@ -9,6 +9,6 @@
     [checked]="todo().completed" 
     (change)="this.todoClicked()"
     />
-    <label for="todo__{{ todo().id }}">{{ todo().title }}</label>
+    <label for="todo__{{ todo().id }}">{{ todo().title | uppercase}}</label>
   </li>
 </ul>
