@@ -6,13 +6,13 @@ import { Todo } from '../model/todo.type';
 })
 export class FilterTodosPipe implements PipeTransform {
 
-  transform(todos: Todo[], searchTerm: string): Todo[] {
-    if(!searchTerm) {
+  transform(todos: Todo[], searchItem: string): Todo[] {
+    if(!searchItem) {
     return todos;
     }
-    const text = searchTerm.toLowerCase()
-    return todos.filter(todo => {
-      return (todo.title.toLocaleLowerCase(text))
+    const text = searchItem.toLowerCase()
+    return todos.filter((todo) => {
+      return todo.title.toLowerCase().includes(text);
     })
   }
 

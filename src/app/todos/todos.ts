@@ -4,10 +4,11 @@ import { Todo } from '../model/todo.type';
 import { catchError } from 'rxjs';
 import { TodoItem } from '../components/todo-item/todo-item';
 import { FormsModule } from '@angular/forms';
+import { FilterTodosPipe } from '../pipes/filter-todos-pipe';
 
 @Component({
   selector: 'app-todos',
-  imports: [TodoItem, FormsModule],
+  imports: [TodoItem, FormsModule, FilterTodosPipe],
   templateUrl: './todos.html',
   styleUrl: './todos.scss',
 })
